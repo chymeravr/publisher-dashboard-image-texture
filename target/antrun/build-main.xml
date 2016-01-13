@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <property file="user.properties"/>
+  <echo message="+---------------------------------------------------+"/>
+  <echo message="    copying war to tomcat server"/>
+  <echo message="+---------------------------------------------------+"/>
+  <copy todir="${tomcat.webapps}/publisher" overwrite="true">
+    <fileset dir="E:\Chimera\workspace\AdNetwork\PublisherModule\PublisherServer\target/publisher">
+      <include name="**/*"/>
+    </fileset>
+  </copy>
+</target>
+</project>
