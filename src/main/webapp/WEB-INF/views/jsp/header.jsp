@@ -11,37 +11,34 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span>
 		</button>
 
-		<a class="navbar-brand" href="#">ChimeraLabs</a>
+		<a class="navbar-brand" href="#" style="padding-top: 5px;">
+			<div>Chimera AdVR</div>
+			<div style="font-size: 0.7em; float: right;">Publisher</div>
+		</a>
 	</div>
 
 	<div class="collapse navbar-right navbar-collapse"
 		id="example-navbar-collapse">
 
 		<ul class="nav navbar-nav">
-			<li class="active">
-				<a href="#">Campaign Management</a>
-			</li>
-			<li>
-				<a href="#"> Reports</a>
-			</li>
-<!-- 			<li class="active"><a href="#">iOS</a></li> -->
-<!-- 			<li><a href="#">SVN</a></li> -->
+			<li class="active"><a href="#">Dashboard</a></li>
+			<li><a href="#"> Reports</a></li>
 
-<!-- 			<li class="dropdown"><a href="#" class="dropdown-toggle" -->
-<!-- 				data-toggle="dropdown"> Java <b class="caret"></b> -->
-<!-- 			</a> -->
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown"> Account <b class="caret"></b>
+			</a>
 
-<!-- 				<ul class="dropdown-menu"> -->
-<!-- 					<li><a href="#">jmeter</a></li> -->
-<!-- 					<li><a href="#">EJB</a></li> -->
-<!-- 					<li><a href="#">Jasper Report</a></li> -->
+				<ul class="dropdown-menu">
+					<li><a href='<c:url value="/j_spring_security_logout"/>'>Logout</a></li>
+					<!-- 					<li><a href="#">EJB</a></li> -->
+					<!-- 					<li><a href="#">Jasper Report</a></li> -->
 
-<!-- 					<li class="divider"></li> -->
-<!-- 					<li><a href="#">Separated link</a></li> -->
+					<!-- 					<li class="divider"></li> -->
+					<!-- 					<li><a href="#">Separated link</a></li> -->
 
-<!-- 					<li class="divider"></li> -->
-<!-- 					<li><a href="#">One more separated link</a></li> -->
-<!-- 				</ul></li> -->
+					<!-- 					<li class="divider"></li> -->
+					<!-- 					<li><a href="#">One more separated link</a></li> -->
+				</ul></li>
 
 		</ul>
 	</div>

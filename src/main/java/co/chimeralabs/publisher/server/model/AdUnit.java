@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import co.chimeralabs.publisher.server.model.AdType;
+
 @Entity
 public class AdUnit implements Serializable{
 
@@ -36,7 +38,12 @@ public class AdUnit implements Serializable{
 	@OneToMany(mappedBy="adUnit", fetch=FetchType.LAZY, cascade={CascadeType.ALL})
 	@Fetch(value=FetchMode.SUBSELECT)
 	private List<AdUnitInstance> adUnitInstances;
-
+	
+	private AdType adType;
+	
+	private Integer resolutionWidth;
+	private Integer resolutionHeight;
+	
 	public Long getAdUnitId() {
 		return adUnitId;
 	}
@@ -68,6 +75,29 @@ public class AdUnit implements Serializable{
 	public void setAdUnitInstances(List<AdUnitInstance> adUnitInstances) {
 		this.adUnitInstances = adUnitInstances;
 	}
-	
+
+	public AdType getAdType() {
+		return adType;
+	}
+
+	public void setAdType(AdType adType) {
+		this.adType = adType;
+	}
+
+	public Integer getResolutionWidth() {
+		return resolutionWidth;
+	}
+
+	public void setResolutionWidth(Integer resolutionWidth) {
+		this.resolutionWidth = resolutionWidth;
+	}
+
+	public Integer getResolutionHeight() {
+		return resolutionHeight;
+	}
+
+	public void setResolutionHeight(Integer resolutionHeight) {
+		this.resolutionHeight = resolutionHeight;
+	}
 	
 }

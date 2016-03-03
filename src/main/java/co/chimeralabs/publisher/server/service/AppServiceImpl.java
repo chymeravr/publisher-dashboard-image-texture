@@ -17,6 +17,9 @@ public class AppServiceImpl implements AppService{
 	@Autowired
 	AppRepository appRepository;
 	
+	@Autowired
+	PublisherService publisherService;
+	
 	@Override
 	public App getApp(Long appId) {
 		return appRepository.getOne(appId);
@@ -39,8 +42,19 @@ public class AppServiceImpl implements AppService{
 	}
 
 	@Override
-	public App save(App app) {
+	@Transactional
+	public App save(App app, Long publisherId) {
+		app.setPublisher(publisherService.getPublisher(publisherId));
 		return appRepository.save(app);
+	}
+
+	@Override
+	@Transactional
+	public Integer deleteApps(List<Long> ids) {
+		for (Long id : ids) {
+			appRepository.delete(id);
+		}
+		return null;
 	}
 
 }
