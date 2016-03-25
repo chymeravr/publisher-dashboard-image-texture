@@ -17,4 +17,9 @@ public class PublisherServiceImpl implements PublisherService{
 		return publisherRepository.save(publisher);
 	}
 
+	@Override
+	public Publisher getPublisher(Long publisherId) {
+		return publisherRepository.findOne(publisherId);
+	}
+
 }

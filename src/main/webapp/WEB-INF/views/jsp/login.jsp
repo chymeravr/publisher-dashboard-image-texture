@@ -1,6 +1,6 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="/WEB-INF/views/includes/taglibs.jsp"%>
-<tiles:insertDefinition name="advertiser_anonymous">
+<tiles:insertDefinition name="publisher_anonymous">
 	<tiles:putAttribute name="js">
 		<script type="text/javascript">
 			function initialize(){

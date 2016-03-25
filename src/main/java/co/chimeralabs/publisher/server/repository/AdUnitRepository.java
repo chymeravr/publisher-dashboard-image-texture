@@ -17,5 +17,5 @@ public interface AdUnitRepository extends JpaRepository<AdUnit, Serializable>{
 	@Query("select au from "
 			+ "AdUnit au where au.app.appId=?1"
 	)
-	public List<AdUnit> getAdUnitsByPublisherAppId(Long appId);
+	public List<AdUnit> getAdUnitsByAppId(Long appId);
 }

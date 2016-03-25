@@ -3,7 +3,7 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-    <definition name="advertiser_dashboard" template="/WEB-INF/views/layout/advertiser_dashboard_layout.jsp">
+    <definition name="publisher_dashboard" template="/WEB-INF/views/layout/publisher_dashboard_layout.jsp">
         <put-attribute name="header" value="/WEB-INF/views/jsp/header.jsp" />
         <put-attribute name="sidebar" value="" />
         <put-attribute name="topbar" value="" />
@@ -12,7 +12,7 @@
         <put-attribute name="js" value="" />
         <put-attribute name="css" value="" />
     </definition>
-    <definition name="advertiser_anonymous" template="/WEB-INF/views/layout/advertiser_dashboard_layout.jsp">
+    <definition name="publisher_anonymous" template="/WEB-INF/views/layout/publisher_dashboard_layout.jsp">
     	<put-attribute name="header" value="" />
         <put-attribute name="sidebar" value="" />
         <put-attribute name="topbar" value="" />

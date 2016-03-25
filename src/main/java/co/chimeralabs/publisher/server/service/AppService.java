@@ -8,5 +8,6 @@ public interface AppService {
 	public App getApp(Long appId);
 	public List<App> getApps(Long publisherId);
 	public List<App> getAppTree(Long publisherId);
-	public App save(App app);
+	public App save(App app, Long publisherId);
+	public Integer deleteApps(List<Long> ids);
 }
