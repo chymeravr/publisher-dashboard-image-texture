@@ -122,7 +122,7 @@ public class PublisherDashboard {
 		return "redirect:/dashboard/am/ui/_ac/gamt";
 	}
 	
-	@RequestMapping(value="/dashboard/cm/rowaction", method = RequestMethod.POST)
+	@RequestMapping(value="/dashboard/am/rowaction", method = RequestMethod.POST)
 	@ResponseBody
 	public String dataRowAction(@RequestBody AM_DataRowActionDTO data){
 		String returnMessage = ""; //success if everything goes well

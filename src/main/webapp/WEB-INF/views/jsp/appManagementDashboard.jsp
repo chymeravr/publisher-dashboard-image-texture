@@ -1,6 +1,10 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ include file="/WEB-INF/views/includes/taglibs.jsp"%>
 <c:url var="static_url" value="/static" />
+<c:url var="actionUrl" value = "/dashboard/am/ui/_ac" />
+<c:url var="dataUrl" value="/dashboard/am/data/_ac" />
+<c:url var="rowActionUrl" value="/dashboard/am/rowaction" />
+
 <tiles:insertDefinition name="publisher_dashboard">
 	<tiles:putAttribute name="sidebar">
 		<div id="sidebar-wrapper">
@@ -65,9 +69,6 @@ ul.sidebar-sub-nav {
 			var selectedAdUnitId;
 			var wrapperPadding = $("div#wrapper").css("padding-left");
 			var advertiserId = "3234";
-			var actionUrl = "/publisher/dashboard/am/ui/_ac";
-			var dataUrl = "/publisher/dashboard/am/data/_ac";
-			var rowActionUrl = "/publisher/dashboard/cm" + "/rowaction";//perform data row action
 			function appNameFormatter(value, row) {
 				return "<a class='app' href='#' id='" + row.appId + "'>"
 						+ row.appName + "</a>";
@@ -83,7 +84,7 @@ ul.sidebar-sub-nav {
 			}
 			function getAndDisplayData() {
 				if (topbarState === "app") {
-					var url = dataUrl + "/gad";
+					var url = "${dataUrl}" + "/gad";
 					$('#dataTable').bootstrapTable('destroy').bootstrapTable({
 						method : 'get',
 						url : url,
@@ -125,7 +126,7 @@ ul.sidebar-sub-nav {
 						} ]
 					});
 				} else if (topbarState === "adunit") {
-					var url = dataUrl + "/gaud";
+					var url = "${dataUrl}" + "/gaud";
 					if (sidebarState === "adunit")
 						url += "?appId=" + selectedAppId;
 					var showApp = false;
@@ -188,7 +189,7 @@ ul.sidebar-sub-nav {
 					});
 
 				} else if (topbarState === "ad") {
-					var url = dataUrl + "/gaad";
+					var url = "${dataUrl}" + "/gaad";
 					if (sidebarState === "ad")
 						url += "?agid=" + selectedAdGroupId;
 					else if (sidebarState === "adgroup")
@@ -271,7 +272,7 @@ ul.sidebar-sub-nav {
 			function rowAction(action){
 				var ids = [];
 				var target = "";
-				var url = rowActionUrl;
+				var url = "${rowActionUrl}";
 				if(topbarState==="app"){/*determine the target for the action*/
 					$("table#dataTable tbody input:checked").each(function(){
 						ids.push($(this).parent().parent().find(".app").attr("id"));
@@ -330,7 +331,7 @@ ul.sidebar-sub-nav {
 								
 							}*/
 							if (topbarState === "app") {
-								var url = actionUrl + "/gapf";
+								var url = "${actionUrl}" + "/gapf";
 								window.location.href = url;
 								/*$.ajax({
 									url: url,
@@ -339,12 +340,12 @@ ul.sidebar-sub-nav {
 									method: "GET"
 								});*/
 							} else if (topbarState === "adunit") {
-								var url = actionUrl + "/gauf";
+								var url = "${actionUrl}" + "/gauf";
 								if (sidebarState === "adunit")
 									url += "?appid=" + selectedAppId;
 								window.location.href = url;
 							} else if (topbarState === "instance") {
-								var url = actionUrl + "/gaif";
+								var url = "${actionUrl}" + "/gaif";
 								if (sidebarState === "instance")
 									url += "?auid=" + selectedAdUnitId;
 								else if (sidebarState === "adunit")
